@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Movie Modal - File Type</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.12.2/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <header class="p-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <a class="logo" href="index.html">
+              <img src="./assets/images/logo.svg" />
+            </a>
+          </div>
+          <div class="col-md-6 text-right">
+            <button class="btn btn-primary btn-large btn-nfx" id="addmoviebtn">
+              Add Movie
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="row" id="moviecontainer"></div>
+    </div>
+
+    <div class="backdrop movieclose" id="backdrop"></div>
+      <div class="moviemodel" id="moviemodel">
+        <form id="movieform">
+          <div class="card">
+            <div class="card-header d-flex justify-content-between">
+              <h3>Add Movie details</h3>
+              <strong class="movieclose">X</strong>
+            </div>
+            <div class="card-body">
+              <div class="form-group">
+                <label for="title">Movie Name</label>
+                <input type="text" class="form-control" id="title" />
+              </div>
+              <div class="form-group">
+                <label for="content">Movie Content</label>
+                <input type="text" class="form-control" id="content" />
+              </div>
+              <div class="form-group">
+                <label for="rating">Movie Rating</label>
+                <select type="text" class="form-control" id="movierating">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <input type="file" id="bannerfile">
+                <img src="" alt="" id="bannerImg">
+              </div>
+            </div>
+            <div class="card-footer d-flex justify-content-between">
+              <button
+                type="submit"
+                id="submitbtn"
+                class="btn btn-primary btn-sm"
+              >
+                Add Movie
+              </button>
+              <button
+                type="button"
+                id="updatebtn"
+                class="btn btn-primary btn-sm d-none"
+              >
+                Update Movie
+              </button>
+              <button type="button" class="btn btn-danger btn-sm movieclose">
+                cancel
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    
+    <div class="loader" id="loader">
+      <div class="spinner-border text-primary">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.12.2/dist/sweetalert2.all.min.js"></script>
+    <script src="./assets/js/app.js"></script>
+  </body>
+</html>

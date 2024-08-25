@@ -1,0 +1,152 @@
+:root {
+  --primary-color: #e50914;
+}
+body {
+  position: relative;
+}
+
+body::after {
+  content: "";
+  min-height: 100vh;
+  position: absolute;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-image: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.8) 0,
+      rgba(0, 0, 0, 0) 60%,
+      rgba(0, 0, 0, 0.8) 100%
+    ),
+    url(../images/hero.jpg);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  filter: blur(1.25) grayscale(0.2);
+}
+
+.logo {
+  width: 9.25rem;
+  height: 2.25rem;
+  display: block;
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.btn.btn-nfx,
+.btn.btn-nfx:hover,
+.btn.btn-nfx:active,
+.btn.btn-nfx:focus {
+  background-color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+  box-shadow: none !important;
+}
+
+.card.moviecard {
+  border: 0px;
+}
+
+.card.moviecard figure {
+  height: 300px;
+  transition: all 0.4s ease-in-out;
+  position: relative;
+}
+
+.card.moviecard figcaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(28, 24, 24, 0.8) 0,
+    rgba(33, 31, 31) 100%
+  );
+  color: #fff;
+  opacity: 0;
+  box-shadow: 2px 2px #000;
+}
+
+.card.moviecard figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card.moviecard:hover figure {
+  transform: scale(1.05);
+}
+
+.card.moviecard:hover figcaption {
+  opacity: 1;
+}
+
+.backdrop {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+}
+
+.moviemodel {
+  position: fixed;
+  height: 300px;
+  width: 50%;
+  top: 10%;
+  left: 25%;
+  background-color: #fff;
+  display: none;
+}
+
+.backdrop.visible {
+  display: block;
+  animation: fadeIn 0.35s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.moviemodel.visible {
+  display: block;
+  animation: slidedown 0.5s ease-in-out;
+}
+
+@keyframes slidedown {
+  from {
+    margin-top: -120px;
+    opacity: 0;
+  }
+  to {
+    margin-top: 0px;
+    opacity: 1;
+  }
+}
+
+.moviemodel.card-header.movieclose {
+  font-size: 24px;
+}
+
+.movieclose {
+  cursor: pointer;
+}
+
+ p{
+  height:100px;
+  overflow:auto;
+}
